@@ -113,13 +113,27 @@ class Boton(Componente):
 class Campo(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
-        self.widget = QtGui.QLineEdit()
+        layout = QtGui.QFormLayout()
+        self.widget = QtGui.QWidget()
+        self.input = QtGui.QLineEdit()
+        self.label = QtGui.QLabel(etiqueta)
+        layout.addRow(self.label, self.input)
+
+        self.widget.setLayout(layout)
         Componente.__init__(self, padre)
 
 class TextoLibre(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
-        self.widget = QtGui.QTextEdit()
+
+        layout = QtGui.QFormLayout()
+        self.widget = QtGui.QWidget()
+        self.input = QtGui.QTextEdit()
+        self.label = QtGui.QLabel(etiqueta)
+        layout.addRow(self.label, self.input)
+
+        self.widget.setLayout(layout)
+
         Componente.__init__(self, padre)
 
 
