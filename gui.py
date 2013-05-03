@@ -112,6 +112,13 @@ class Campo(Componente):
         self.widget = QtGui.QLineEdit()
         Componente.__init__(self, padre)
 
+class TextoLibre(Componente):
+
+    def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
+        self.widget = QtGui.QTextEdit()
+        Componente.__init__(self, padre)
+
+
 
 if __name__ == "__main__":
     iniciar()
@@ -119,6 +126,7 @@ if __name__ == "__main__":
     b = Boton(v, "hola !")
     c = Boton(v, "Otro Boton")
     b = Boton(v, "Otro Boton")
+    texto = TextoLibre(v)
     campo = Campo(v)
     v.alertar("hola?")
     v.confirmar("hola?")
