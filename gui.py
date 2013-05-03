@@ -28,9 +28,12 @@ class Componente(object):
     """Representa el contexto de la aplicacion global."""
     app = False
 
-    def __init__(self):
+    def __init__(self, padre=None):
         if not Componente.app:
             iniciar()
+        if padre:
+            padre.agregar_a_grilla(self.widget)
+            padre.mostrar()
 
     def obtener_centro_escritorio(kls):
         return QtGui.QDesktopWidget().availableGeometry().center()
@@ -50,6 +53,10 @@ class Ventana(Componente):
     def __init__(self, titulo="sin titulo", ancho=320, alto=240, posicion_x=100, posicion_y=100):
         Componente.__init__(self)
         self.widget = QtGui.QWidget()
+
+        self._grid = QtGui.QGridLayout()
+        self._grid.setSpacing(10)
+        self.widget.setLayout(self._grid)
         self.widget.resize(ancho, alto)
         self.widget.setWindowTitle(titulo)
         self.definir_posicion(posicion_x, posicion_y)
@@ -79,13 +86,16 @@ class Ventana(Componente):
 
     titulo = property(obtener_titulo, definir_titulo)
 
+    def agregar_a_grilla(self, widget):
+        self._grid.addWidget(widget, self._grid.rowCount(), 0)
+
+
 
 class Boton(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta"):
-        Componente.__init__(self)
-        self.widget = QtGui.QPushButton(etiqueta, parent=padre.widget)
-        self.mostrar()
+        self.widget = QtGui.QPushButton(etiqueta)
+        Componente.__init__(self, padre)
 
     def obtener_texto(self):
         return str(self.widget.text())
@@ -99,16 +109,17 @@ class Boton(Componente):
 class Campo(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
-        Componente.__init__(self)
-        self.widget = QtGui.QLineEdit(padre.widget)
-        self.mostrar()
+        self.widget = QtGui.QLineEdit()
+        Componente.__init__(self, padre)
 
 
 if __name__ == "__main__":
     iniciar()
     v = Ventana()
     b = Boton(v, "hola !")
-    b.definir_posicion(200, 100)
+    c = Boton(v, "Otro Boton")
+    b = Boton(v, "Otro Boton")
     campo = Campo(v)
     v.alertar("hola?")
     v.confirmar("hola?")
+
