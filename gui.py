@@ -68,6 +68,13 @@ class Ventana(Componente):
         respuesta = QtGui.QMessageBox.question(self.widget, 'Confirmar', mensaje, botones)
         return respuesta == QtGui.QMessageBox.Yes
 
+    def obtener_titulo(self):
+        return str(self.widget.windowTitle())
+
+    def definir_titulo(self, titulo):
+        self.widget.setWindowTitle(titulo)
+
+    titulo = property(obtener_titulo, definir_titulo)
 
 
 class Boton(Componente):
@@ -77,9 +84,14 @@ class Boton(Componente):
         self.widget = QtGui.QPushButton(etiqueta, parent=padre.widget)
         self.mostrar()
 
-    @property
-    def etiqueta(self):
-        return self.widget.get
+    def obtener_texto(self):
+        return str(self.widget.text())
+
+    def definir_texto(self, nuevo_valor):
+        return self.widget.setText(nuevo_valor)
+
+    texto = property(obtener_texto, definir_texto)
+
 
 class Campo(Componente):
 
