@@ -18,6 +18,16 @@ mas utilizadas.
 </table>
 
 
+Todo
+----
+
+- [X] Mejorar la API para enparentar widgets.
+- [X] Crear un layout 
+- [X] Crear el widget TextoLibre
+- [ ] Implementar etiquetas para los widgets Campo y TextoLibre.
+- [ ] Documentar los ejemplos en este mismo archivo README.
+
+
 Ejemplo básico
 --------------
 
