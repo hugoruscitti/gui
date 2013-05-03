@@ -58,35 +58,31 @@ class Ventana(Componente):
 
         Componente.definir_posicion(self, x, y)
 
-    def agregar(self, componente):
-        componente.widget.setParent(self.widget)
-        componente.mostrar()
-
     def confirmar(self, mensaje='sin mensaje'):
         botones = QtGui.QMessageBox.Yes|QtGui.QMessageBox.No
         respuesta = QtGui.QMessageBox.question(self.widget, 'Confirmar', mensaje, botones)
         return respuesta == QtGui.QMessageBox.Yes
 
 
+
 class Boton(Componente):
 
-    def __init__(self, etiqueta="sin etiqueta"):
-        self.widget = QtGui.QPushButton(etiqueta)
+    def __init__(self, padre, etiqueta="sin etiqueta"):
+        self.widget = QtGui.QPushButton(etiqueta, parent=padre.widget)
         self.mostrar()
 
 
 class Campo(Componente):
 
-    def __init__(self, etiqueta="sin etiqueta", valor_inicial=""):
-        self.widget = QtGui.QLineEdit()
+    def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
+        self.widget = QtGui.QLineEdit(padre.widget)
         self.mostrar()
 
 
 if __name__ == "__main__":
     iniciar()
     v = Ventana()
-    b = Boton()
-    v.agregar(b)
-    v.agregar(Campo("Ingrese nombre"))
+    b = Boton(v, "hola !")
     b.definir_posicion(200, 100)
+    campo = Campo(v)
     v.confirmar("hola?")
