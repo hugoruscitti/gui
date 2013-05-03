@@ -105,6 +105,10 @@ class Boton(Componente):
 
     texto = property(obtener_texto, definir_texto)
 
+    def conectar_cuando_pulsa(self, funcion):
+        QtCore.QObject.connect(self.widget, QtCore.SIGNAL('clicked()'), funcion)
+
+    cuando_pulsa = property(None, conectar_cuando_pulsa)
 
 class Campo(Componente):
 
@@ -123,11 +127,20 @@ class TextoLibre(Componente):
 if __name__ == "__main__":
     iniciar()
     v = Ventana()
-    b = Boton(v, "hola !")
-    c = Boton(v, "Otro Boton")
-    b = Boton(v, "Otro Boton")
+    a = Boton(v, "hola !")
+    c = Boton(v, "Hacer una pregunta")
+    b = Boton(v, "Emitir un saludo")
+
+    def hacer_una_pregunta():
+        respuesta = v.confirmar("Esta seguro?")
+        print "Ha contestado", respuesta
+
+    c.cuando_pulsa = hacer_una_pregunta
+
+    def saludar():
+        v.alertar("Hola!!!")
+
+    b.cuando_pulsa = saludar
+
     texto = TextoLibre(v)
     campo = Campo(v)
-    v.alertar("hola?")
-    v.confirmar("hola?")
-
