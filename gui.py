@@ -68,6 +68,9 @@ class Ventana(Componente):
         respuesta = QtGui.QMessageBox.question(self.widget, 'Confirmar', mensaje, botones)
         return respuesta == QtGui.QMessageBox.Yes
 
+    def alertar(self, mensaje=''):
+        QtGui.QMessageBox.information(self.widget, 'Alerta', mensaje)
+
     def obtener_titulo(self):
         return str(self.widget.windowTitle())
 
@@ -107,4 +110,5 @@ if __name__ == "__main__":
     b = Boton(v, "hola !")
     b.definir_posicion(200, 100)
     campo = Campo(v)
+    v.alertar("hola?")
     v.confirmar("hola?")
