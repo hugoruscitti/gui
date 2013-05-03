@@ -28,6 +28,10 @@ class Componente(object):
     """Representa el contexto de la aplicacion global."""
     app = False
 
+    def __init__(self):
+        if not Componente.app:
+            iniciar()
+
     def obtener_centro_escritorio(kls):
         return QtGui.QDesktopWidget().availableGeometry().center()
 
@@ -44,6 +48,7 @@ class Componente(object):
 class Ventana(Componente):
 
     def __init__(self, titulo="sin titulo", ancho=320, alto=240, posicion_x=100, posicion_y=100):
+        Componente.__init__(self)
         self.widget = QtGui.QWidget()
         self.widget.resize(ancho, alto)
         self.widget.setWindowTitle(titulo)
@@ -68,13 +73,18 @@ class Ventana(Componente):
 class Boton(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta"):
+        Componente.__init__(self)
         self.widget = QtGui.QPushButton(etiqueta, parent=padre.widget)
         self.mostrar()
 
+    @property
+    def etiqueta(self):
+        return self.widget.get
 
 class Campo(Componente):
 
     def __init__(self, padre, etiqueta="sin etiqueta", valor_inicial=""):
+        Componente.__init__(self)
         self.widget = QtGui.QLineEdit(padre.widget)
         self.mostrar()
 
