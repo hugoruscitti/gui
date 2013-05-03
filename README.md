@@ -7,6 +7,17 @@ Una biblioteca muy simple para ayudar a construir aplicaciones gráficas en clas
 **gui** utiliza pyqt4 cómo bilioteca soporte, solo que traduce algunas de sus funciones
 mas utilizadas.
 
+
+<table>
+<tr>
+    <td>Resultado</td>
+    <td>
+<pre>Código</pre>
+    </td>
+</td>
+</table>
+
+
 Ejemplo básico
 --------------
 
