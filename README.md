@@ -20,7 +20,7 @@ Luego puedes abrir un intérprete de python y comenzar a escribir:
 
 <table>
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/ventana.png'></td>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/ventana.png'></td>
     <td>
 <pre>import gui
 
@@ -30,7 +30,7 @@ ventana = gui.Ventana("Hola!")
 </tr>
 
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/boton.png'></td>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/boton.png'></td>
     <td>
 <pre>import gui
 
@@ -41,7 +41,7 @@ boton = gui.Boton(ventana, "Pulse")
 </tr>
 
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/campo.png'></td>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/campo.png'></td>
     <td>
 <pre>import gui
 
