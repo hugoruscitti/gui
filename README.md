@@ -18,6 +18,13 @@ Puedes ingresar en una consola y descargar la biblioteca con este comando:
 
 Luego puedes abrir un intérprete de python y comenzar a escribir:
 
+
+<style>
+img {
+    box-shadow: 0px 0px 10px gray;
+}
+</style>
+
 <table>
 <tr>
     <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/ventana.png'></td>
