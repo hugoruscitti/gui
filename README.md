@@ -19,15 +19,11 @@ Puedes ingresar en una consola y descargar la biblioteca con este comando:
 Luego puedes abrir un intérprete de python y comenzar a escribir:
 
 
-<style>
-img {
-    box-shadow: 0px 0px 10px gray;
-}
-</style>
+
 
 <table>
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/ventana.png'></td>
+    <td><img style='img {box-shadow: 0px 0px 10px gray;}' src='https://raw.github.com/hugoruscitti/gui/master/imagenes/ventana.png'></td>
     <td>
 <pre>import gui
 
@@ -37,7 +33,7 @@ ventana = gui.Ventana("Hola!")
 </tr>
 
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/boton.png'></td>
+    <td><img style='img {box-shadow: 0px 0px 10px gray;}' src='https://raw.github.com/hugoruscitti/gui/master/imagenes/boton.png'></td>
     <td>
 <pre>import gui
 
@@ -48,7 +44,7 @@ boton = gui.Boton(ventana, "Pulse")
 </tr>
 
 <tr>
-    <td><img src='https://raw.github.com/hugoruscitti/gui/master/imagenes/campo.png'></td>
+    <td><img style='img {box-shadow: 0px 0px 10px gray;}' src='https://raw.github.com/hugoruscitti/gui/master/imagenes/campo.png'></td>
     <td>
 <pre>import gui
 
