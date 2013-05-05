@@ -8,36 +8,48 @@ Una biblioteca muy simple para ayudar a construir aplicaciones gráficas en clas
 mas utilizadas.
 
 
-<table>
-<tr>
-    <td>Resultado</td>
-    <td>
-<pre>Código</pre>
-    </td>
-</td>
-</table>
-
-
-Todo
-----
-
-- [X] Mejorar la API para enparentar widgets.
-- [X] Crear un layout 
-- [X] Crear el widget TextoLibre
-- [ ] Implementar etiquetas para los widgets Campo y TextoLibre.
-- [ ] Documentar los ejemplos en este mismo archivo README.
-
-
-Ejemplo básico
+Primeros pasos
 --------------
 
-    import gui
+Puedes ingresar en una consola y descargar la biblioteca con este comando:
 
-    gui.iniciar()
+    wget https://raw.github.com/hugoruscitti/gui/master/gui.py
 
-    v = gui.Ventana()
-    b = gui.Boton()
 
-    v.agregar(b)
+Luego puedes abrir un intérprete de python y comenzar a escribir:
 
-    v.confirmar("Te parece una buena idea?")
+<table>
+<tr>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/ventana.png'></td>
+    <td>
+<pre>import gui
+
+ventana = gui.Ventana("Hola!")
+</pre>
+    </td>
+</tr>
+
+<tr>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/boton.png'></td>
+    <td>
+<pre>import gui
+
+ventana = gui.Ventana("Hola!")
+boton = gui.Boton(ventana, "Pulse")
+</pre>
+    </td>
+</tr>
+
+<tr>
+    <td><img src='https://raw.github.com/hugoruscitti/gui/master/campo.png'></td>
+    <td>
+<pre>import gui
+
+ventana = gui.Ventana("Hola!")
+boton = gui.Boton(ventana, "Pulse")
+campo = gui.Campo(ventana, 'ingrese su nombre', 'Pepe')
+</pre>
+    </td>
+</tr>
+
+</table>
