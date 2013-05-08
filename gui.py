@@ -136,6 +136,18 @@ class TextoLibre(Componente):
 
         Componente.__init__(self, padre)
 
+    def obtener_etiqueta(self):
+        return str(self.label.text())
+
+    def definir_etiqueta(self, texto):
+        self.label.setText(texto)
+
+    etiqueta = property(obtener_etiqueta, definir_etiqueta)
+
+    def definir_texto(self, texto):
+        self.input.setText(texto)
+
+    texto = property(None, definir_texto)
 
 
 if __name__ == "__main__":
