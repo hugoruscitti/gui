@@ -11,6 +11,7 @@ import signal
 
 from PyQt4 import QtCore
 from PyQt4 import QtGui
+from PyQt4 import uic
 
 
 def ejecutar_main_loop():
@@ -148,6 +149,21 @@ class TextoLibre(Componente):
         self.input.setText(texto)
 
     texto = property(None, definir_texto)
+
+def abrir(ruta_al_archivo_ui):
+    """Abre y carga el contenido de un archivo de interfaz creado Designer.
+
+    Designer es un programa que permite crear la interfaz de usuario de
+    manera sencilla.
+
+    Para instalarlo hay que ejecutar el siguiente comando:
+
+        sudo apt-get install qt4-designer
+    """
+
+    window = uic.loadUi(ruta_al_archivo_ui)
+    window.show()
+    return window
 
 
 if __name__ == "__main__":

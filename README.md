@@ -19,8 +19,6 @@ Puedes ingresar en una consola y descargar la biblioteca con este comando:
 Luego puedes abrir un intérprete de python y comenzar a escribir:
 
 
-
-
 <table>
 <tr>
     <td><img style='img {box-shadow: 0px 0px 10px gray;}' src='https://raw.github.com/hugoruscitti/gui/master/imagenes/ventana.png'></td>
@@ -56,3 +54,14 @@ campo = gui.Campo(ventana, 'ingrese su nombre', 'Pepe')
 </tr>
 
 </table>
+
+Integración con QtDesigner
+--------------------------
+
+Una forma mas sencilla de construir la interfaz de usuario es utilizar
+QtDesigner, generar un archivo .ui y luego cargarlo desde gui:
+
+
+    >>> import gui
+    >>> ventana = gui.abrir("archivo.ui")
+
